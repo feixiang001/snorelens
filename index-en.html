@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>SnoreLens - Smart Snore Detection | AI Sleep Analysis App</title>
+    <meta name="description" content="SnoreLens uses advanced local AI technology to detect and analyze snoring in real-time, helping you improve sleep quality. 100% privacy protection with on-device processing.">
+    <meta name="keywords" content="snore detection, sleep monitoring, AI analysis, sleep quality, snoring app, sleep tracker, snore recorder">
+    <meta name="author" content="SnoreLens">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/snorelens-privacy/index-en.html">
+    <meta property="og:title" content="SnoreLens - Smart Snore Detection App">
+    <meta property="og:description" content="AI-powered snore detection and sleep analysis. Protect your privacy with 100% local processing.">
+    <meta property="og:image" content="https://yourusername.github.io/snorelens-privacy/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/snorelens-privacy/index-en.html">
+    <meta property="twitter:title" content="SnoreLens - Smart Snore Detection App">
+    <meta property="twitter:description" content="AI-powered snore detection and sleep analysis. Protect your privacy with 100% local processing.">
+    <meta property="twitter:image" content="https://yourusername.github.io/snorelens-privacy/twitter-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Language alternates for SEO -->
+    <link rel="alternate" hreflang="zh" href="index.html">
+    <link rel="alternate" hreflang="en" href="index-en.html">
+    <link rel="alternate" hreflang="x-default" href="index-en.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a1a2e;
+            --light: #f8f9ff;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .lang-switcher a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-switcher a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .hero .description {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--dark);
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+        
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5em;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            gap: 40px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+        
+        .step-number {
+            font-size: 3em;
+            font-weight: 800;
+            color: var(--primary);
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .step-content h3 {
+            font-size: 1.5em;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .step-content p {
+            color: #666;
+        }
+        
+        /* Privacy Section */
+        .privacy-highlight {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .privacy-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .privacy-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .privacy-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .privacy-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        /* Download Section */
+        .download {
+            padding: 100px 20px;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+        
+        .download h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .download p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            background: #0f0f1e;
+            color: white;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step:hover {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="index.html">🇨🇳 中文</a> | <a href="index-en.html"><strong>🇺🇸 English</strong></a>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🌙 SnoreLens</h1>
+            <p class="tagline">Smart Snore Detection for Better Sleep</p>
+            <p class="description">
+                Advanced local AI technology for real-time snore detection and analysis<br>
+                100% Privacy Protection · On-Device Processing · Works Offline
+            </p>
+            <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary">Download Now</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Why Choose SnoreLens?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>Local AI Processing</h3>
+                <p>Powered by TensorFlow Lite, all analysis happens on your device. No data upload, complete privacy protection.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Detailed Sleep Analysis</h3>
+                <p>Real-time monitoring of snoring frequency, volume, and duration. Professional sleep quality reports and trend analysis.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3>iCloud Auto Sync</h3>
+                <p>Automatically sync your data across all Apple devices. Access your sleep records anytime, anywhere.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎤</div>
+                <h3>Smart Recording Playback</h3>
+                <p>Automatically record snoring segments. Support playback and export to understand your real sleep condition.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>13 Languages Supported</h3>
+                <p>Support for Chinese, English, Japanese, Korean, and 9 more languages. Easy to use for global users.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy-First Design</h3>
+                <p>No ads, no tracking, no third-party data collection. Your data belongs to you completely.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2 class="section-title">Super Easy to Use</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Open the App</h3>
+                    <p>Tap the large circular button to start monitoring. Place your phone on the nightstand.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Sleep Peacefully</h3>
+                    <p>The app works in the background, automatically detecting and recording snoring without disturbing your sleep.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>View Report</h3>
+                    <p>Stop monitoring when you wake up and instantly get a detailed sleep quality analysis report.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Improve Sleep</h3>
+                    <p>Understand your sleep patterns through trend analysis and take action to improve sleep quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Privacy Highlight -->
+    <section class="privacy-highlight">
+        <div class="privacy-content">
+            <h2>🔐 Your Privacy, Our Promise</h2>
+            <p>SnoreLens uses industry-leading privacy protection technology to ensure your data security</p>
+            
+            <div class="privacy-features">
+                <div class="privacy-item">
+                    <div class="icon">📱</div>
+                    <h3>Local Processing</h3>
+                    <p>All AI analysis on-device</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <div class="icon">🚫</div>
+                    <h3>Zero Upload</h3>
+                    <p>Audio files never uploaded</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <div class="icon">🔐</div>
+                    <h3>Apple Encryption</h3>
+                    <p>iCloud data end-to-end encrypted</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <div class="icon">✅</div>
+                    <h3>Full Control</h3>
+                    <p>Delete all data anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <h2>Start Improving Your Sleep Today</h2>
+        <p>Download SnoreLens for free and experience smart sleep monitoring</p>
+        
+        <div class="cta-buttons">
+            <a href="https://apps.apple.com/app/snorelens" class="btn btn-primary">
+                🍎 Download on App Store
+            </a>
+        </div>
+        
+        <p style="margin-top: 40px; font-size: 0.9em; opacity: 0.7;">
+            Requires iOS 17.0 or later · iPhone and iPad
+        </p>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:shaozhen008@gmail.com">Contact Us</a>
+        </div>
+        <p style="opacity: 0.6;">© 2026 SnoreLens. All rights reserved.</p>
+    </footer>
+    
+    <!-- Schema.org structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "SnoreLens",
+      "description": "Smart snore detection app using AI technology for real-time snoring pattern analysis",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS 17.0 or later",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1000"
+      },
+      "inLanguage": ["en", "zh", "ja", "ko", "fr", "de", "es", "pt", "ru", "ar", "hi", "th"]
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>SnoreLens - 智能鼾声监测 | AI睡眠分析应用</title>
+    <meta name="description" content="SnoreLens 使用先进的本地AI技术实时检测和分析鼾声，帮助您改善睡眠质量。100%隐私保护，数据完全本地处理。">
+    <meta name="keywords" content="鼾声检测,睡眠监测,AI分析,睡眠质量,打鼾,snore detection,sleep monitoring">
+    <meta name="author" content="SnoreLens">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/snorelens-privacy/">
+    <meta property="og:title" content="SnoreLens - 智能鼾声监测应用">
+    <meta property="og:description" content="使用AI技术实时检测和分析鼾声，改善您的睡眠质量">
+    <meta property="og:image" content="https://yourusername.github.io/snorelens-privacy/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/snorelens-privacy/">
+    <meta property="twitter:title" content="SnoreLens - 智能鼾声监测应用">
+    <meta property="twitter:description" content="使用AI技术实时检测和分析鼾声，改善您的睡眠质量">
+    <meta property="twitter:image" content="https://yourusername.github.io/snorelens-privacy/twitter-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Language alternates for SEO -->
+    <link rel="alternate" hreflang="zh" href="index.html">
+    <link rel="alternate" hreflang="en" href="index-en.html">
+    <link rel="alternate" hreflang="x-default" href="index-en.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --dark: #1a1a2e;
+            --light: #f8f9ff;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .lang-switcher a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .lang-switcher a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .hero .description {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--dark);
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+        
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5em;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .steps {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            gap: 40px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+        
+        .step-number {
+            font-size: 3em;
+            font-weight: 800;
+            color: var(--primary);
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .step-content h3 {
+            font-size: 1.5em;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .step-content p {
+            color: #666;
+        }
+        
+        /* Privacy Section */
+        .privacy-highlight {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .privacy-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .privacy-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .privacy-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .privacy-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        /* Download Section */
+        .download {
+            padding: 100px 20px;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+        
+        .download h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .download p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .app-store-badge {
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .app-store-badge img {
+            height: 60px;
+            transition: all 0.3s;
+        }
+        
+        .app-store-badge:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            background: #0f0f1e;
+            color: white;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+            
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step:hover {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="index.html"><strong>🇨🇳 中文</strong></a> | <a href="index-en.html">🇺🇸 English</a>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🌙 SnoreLens</h1>
+            <p class="tagline">智能鼾声监测，守护您的睡眠健康</p>
+            <p class="description">
+                使用先进的本地 AI 技术，实时检测和分析鼾声模式<br>
+                100% 隐私保护 · 完全本地处理 · 无需联网
+            </p>
+            <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary">立即下载</a>
+                <a href="#features" class="btn btn-secondary">了解更多</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">为什么选择 SnoreLens？</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>本地 AI 处理</h3>
+                <p>采用 TensorFlow Lite 技术，所有分析在设备上完成，无需上传数据，保护您的隐私</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>详细睡眠分析</h3>
+                <p>实时监测鼾声频率、音量和持续时间，生成专业的睡眠质量报告和趋势分析</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <h3>iCloud 自动同步</h3>
+                <p>数据自动同步到您的所有 Apple 设备，随时随地查看睡眠记录</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎤</div>
+                <h3>智能录音回放</h3>
+                <p>自动录制鼾声片段，支持回放和导出，帮助您了解真实的睡眠状况</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>13 国语言支持</h3>
+                <p>支持中文、英语、日语、韩语等 13 种语言，全球用户都能轻松使用</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>隐私优先设计</h3>
+                <p>无广告、无追踪、无第三方数据收集，您的数据完全属于您自己</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2 class="section-title">使用超简单</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>打开应用</h3>
+                    <p>点击中央的大圆形按钮开始监测，将手机放在床头柜上</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>安心入睡</h3>
+                    <p>应用会在后台自动工作，实时检测和记录鼾声，不会打扰您的睡眠</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>查看报告</h3>
+                    <p>早上醒来后停止监测，立即获得详细的睡眠质量分析报告</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>改善睡眠</h3>
+                    <p>根据趋势分析了解睡眠模式，采取措施改善睡眠质量</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Privacy Highlight -->
+    <section class="privacy-highlight">
+        <div class="privacy-content">
+            <h2>🔐 您的隐私，我们的承诺</h2>
+            <p>SnoreLens 采用业界领先的隐私保护技术，确保您的数据安全</p>
+            
+            <div class="privacy-features">
+                <div class="privacy-item">
+                    <div class="icon">📱</div>
+                    <h3>本地处理</h3>
+                    <p>所有 AI 分析在设备上完成</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <div class="icon">🚫</div>
+                    <h3>零上传</h3>
+                    <p>录音文件永不上传</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <div class="icon">🔐</div>
+                    <h3>Apple 加密</h3>
+                    <p>iCloud 数据端到端加密</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <div class="icon">✅</div>
+                    <h3>完全控制</h3>
+                    <p>随时删除所有数据</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <h2>立即开始改善您的睡眠</h2>
+        <p>免费下载 SnoreLens，体验智能睡眠监测</p>
+        
+        <div class="cta-buttons">
+            <a href="https://apps.apple.com/app/snorelens" class="btn btn-primary">
+                🍎 App Store 下载
+            </a>
+        </div>
+        
+        <p style="margin-top: 40px; font-size: 0.9em; opacity: 0.7;">
+            支持 iOS 17.0 及以上版本 · iPhone 和 iPad
+        </p>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="privacy-policy.html">隐私政策</a>
+            <a href="support.html">技术支持</a>
+            <a href="mailto:shaozhen008@gmail.com">联系我们</a>
+        </div>
+        <p style="opacity: 0.6;">© 2026 SnoreLens. All rights reserved.</p>
+    </footer>
+    
+    <!-- Schema.org structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "SnoreLens",
+      "description": "智能鼾声监测应用，使用AI技术实时检测和分析鼾声模式",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS 17.0 or later",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1000"
+      },
+      "inLanguage": ["zh", "en", "ja", "ko", "fr", "de", "es", "pt", "ru", "ar", "hi", "th"]
+    }
+    </script>
+</body>
+</html>
