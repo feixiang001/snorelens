@@ -4,19 +4,19 @@ This repository contains the privacy policy and support documentation for SnoreL
 
 ## 🔗 Important Links
 
-- 📄 [Privacy Policy](https://YOUR_USERNAME.github.io/snorelens-privacy/privacy-policy.html)
-- 💬 [Support Center](https://YOUR_USERNAME.github.io/snorelens-privacy/support.html)
+- 📄 [Privacy Policy](https://feixiang001.github.io/snorelens/privacy-policy.html)
+- 💬 [Support Center](https://feixiang001.github.io/snorelens/support.html)
 
 ## 📱 About SnoreLens
 
 SnoreLens is a sleep monitoring app that uses local AI to detect and analyze snoring patterns.
 
 ### Key Privacy Features:
-- ✅ 100% local AI processing
-- ✅ iCloud sync for your data across devices
-- ✅ No third-party analytics or ads
-- ✅ Audio recordings stored locally only
-- ✅ You control all your data
+- �100% local AI processing
+- �iCloud sync for your data across devices
+- �No third-party analytics or ads
+- �Audio recordings stored locally only
+- �You control all your data
 
 ## 📄 Available Pages
 
