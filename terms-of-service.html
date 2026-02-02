@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SnoreLens - Terms of Service / 使用条款</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei",
+        sans-serif;
+      line-height: 1.6;
+      color: #111827;
+      background: #f9fafb;
+    }
+    h1, h2, h3 {
+      color: #111827;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.25rem;
+    }
+    ul {
+      padding-left: 1.4rem;
+    }
+    .last-updated {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+    }
+    .lang-toggle {
+      margin: 1rem 0 1.5rem;
+      display: inline-flex;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    .lang-btn {
+      border: none;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: transparent;
+      color: #4b5563;
+    }
+    .lang-btn.active {
+      background: #111827;
+      color: #f9fafb;
+    }
+    .section-label {
+      font-weight: 600;
+      color: #374151;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌙 SnoreLens</h1>
+  <p><strong>Terms of Service / 使用条款</strong></p>
+  <p class="last-updated">
+    Last Updated: January 25, 2026 / 最后更新：2026年1月25日
+  </p>
+
+  <!-- 语言切换按钮 -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-zh" onclick="switchLang('zh')">中文</button>
+    <button class="lang-btn" id="btn-en" onclick="switchLang('en')">English</button>
+  </div>
+
+  <hr />
+
+  <!-- 中文内容 -->
+  <div id="content-zh">
+    <p><strong>核心声明</strong></p>
+    <p>
+      本使用条款旨在说明您在使用 SnoreLens 应用（以下简称“本应用”）时与开发者之间的权利与义务。
+      SnoreLens 专注于本地 AI 分析与隐私保护，<strong>不得作为医疗器械或医疗诊断工具</strong>使用。
+    </p>
+
+    <h2>1. 简介</h2>
+    <p>
+      欢迎使用 SnoreLens！在安装、访问或使用本应用前，请仔细阅读本使用条款。
+      一旦您安装或使用本应用，即表示您已阅读、理解并同意受本条款约束。
+      若您不同意本条款的任何内容，请立即卸载本应用并停止使用。
+    </p>
+
+    <h2>2. 服务说明</h2>
+    <p class="section-label">2.1 功能概述</p>
+    <ul>
+      <li>本应用提供基于本地 AI 的打鼾监测与睡眠分析。</li>
+      <li>在您授权后，本应用会录制睡眠期间的环境声音，并在设备本地进行分析。</li>
+      <li>本应用会生成睡眠记录、鼾声事件统计和简单趋势分析，仅供个人参考。</li>
+    </ul>
+
+    <p class="section-label">2.2 非医疗用途</p>
+    <p>
+      本应用不属于医疗器械，不提供任何医疗诊断、治疗或预防功能。
+      所有结果仅供生活方式参考，<strong>不得用于替代医生或专业医疗机构的意见、诊断或治疗方案</strong>。
+    </p>
+
+    <h2>3. 使用资格</h2>
+    <ul>
+      <li>您应具备在您所在司法辖区内订立具有法律约束力协议的完全民事行为能力。</li>
+      <li>如您为未成年人的监护人，您应确保已阅读并同意本条款，并对未成年人的使用行为承担全部责任。</li>
+    </ul>
+
+    <h2>4. 隐私与数据处理摘要</h2>
+    <p>
+      有关数据收集、存储与同步的详细说明，请参阅我们的
+      <a href="https://feixiang001.github.io/snorelens/privacy-policy" target="_blank" rel="noopener noreferrer">
+        隐私政策 / Privacy Policy
+      </a>。
+      以下内容是与使用条款直接相关的简要摘要：
+    </p>
+    <ul>
+      <li><strong>音频录音</strong>：录音文件仅存储在您的本地设备，不会上传到开发者服务器。</li>
+      <li><strong>睡眠记录与统计数据</strong>：可通过 Apple iCloud / CloudKit 在您的设备间同步，数据存储在您的 iCloud 账户中，由 Apple 加密管理。</li>
+      <li><strong>开发者访问权限</strong>：开发者无法访问您的 iCloud 账户或其中的个人睡眠数据。</li>
+    </ul>
+
+    <h2>5. 用户行为规范</h2>
+    <p>您同意在使用本应用时不会从事以下行为：</p>
+    <ul>
+      <li>违反任何适用法律法规或监管要求；</li>
+      <li>在未经他人明确知情同意的情况下，录制或分析他人的睡眠声音或个人隐私信息；</li>
+      <li>对本应用进行反向工程、反编译、试图获取源代码或模型细节；</li>
+      <li>利用本应用进行任何形式的滥用、骚扰、侵犯隐私或违法行为；</li>
+      <li>以本应用输出为唯一依据做出重大健康或医疗决策。</li>
+    </ul>
+
+    <h2>6. 知识产权</h2>
+    <ul>
+      <li>本应用中的所有内容（包括但不限于应用名称、图标、界面设计、文本、代码、模型与算法）受著作权法和相关法律保护。</li>
+      <li>未经开发者事先书面许可，您不得复制、修改、分发、售卖或以其他方式商业化本应用或其任何部分。</li>
+    </ul>
+
+    <h2>7. 服务变更与终止</h2>
+    <ul>
+      <li>开发者保留随时对本应用进行更新、功能调整、暂停或终止服务的权利。</li>
+      <li>如因维护、升级或其他原因导致服务中断或功能变更，开发者将在合理范围内尽量减少对您的影响。</li>
+    </ul>
+
+    <h2>8. 免责声明与责任限制</h2>
+    <p>
+      在适用法律允许的最大范围内，本应用以“<strong>现状</strong>”及“<strong>可用</strong>”的状态提供，
+      对以下事项不作任何明示或暗示的保证：
+    </p>
+    <ul>
+      <li>检测结果或分析的准确性、完整性、可靠性或适用于任何特定目的；</li>
+      <li>本应用持续、不间断或完全无错误地运行；</li>
+      <li>本应用适用于任何医疗、诊断或临床用途。</li>
+    </ul>
+    <p>
+      在法律允许的范围内，开发者对因使用或无法使用本应用而造成的任何直接、间接、附带、特殊或后果性损害不承担责任。
+      如法律不允许完全排除责任，则在任何情况下，开发者的总责任不应超过您因使用本应用实际支付的金额（大多数情况下为 0）。
+    </p>
+
+    <h2>9. 第三方服务</h2>
+    <ul>
+      <li>本应用依赖 Apple 提供的 iCloud / CloudKit、AVFoundation、StoreKit（如有订阅）等系统级服务。</li>
+      <li>您在使用这些第三方服务时，还需遵守相应服务提供方（如 Apple）的条款和隐私政策。</li>
+    </ul>
+
+    <h2>10. 条款更新</h2>
+    <p>
+      我们可能会不时更新本使用条款，以反映功能调整、法律要求或隐私实践的变化。
+      更新后的条款将发布在本页面，并标注最新的生效日期。
+      如您在条款更新后继续使用本应用，即视为您已接受更新后的条款。
+    </p>
+
+    <h2>11. 联系我们</h2>
+    <p>如您对本使用条款或本应用有任何疑问、意见或建议，欢迎与我们联系：</p>
+    <ul>
+      <li>📧 Email: <a href="mailto:shaozhen008@gmail.com">shaozhen008@gmail.com</a></li>
+      <li>🌐 GitHub: <a href="https://feixiang001.github.io/snorelens" target="_blank" rel="noopener noreferrer">https://feixiang001.github.io/snorelens</a></li>
+    </ul>
+    <p>© 2026 SnoreLens. All rights reserved.</p>
+  </div>
+
+  <!-- 英文内容 -->
+  <div id="content-en" style="display:none;">
+    <p><strong>Core Statement</strong></p>
+    <p>
+      These Terms of Service explain the rights and obligations between you and the developer when you use the SnoreLens application (the “App”).
+      SnoreLens focuses on on-device AI analysis and privacy protection and <strong>must not be used as a medical device or diagnostic tool</strong>.
+    </p>
+
+    <h2>1. Introduction</h2>
+    <p>
+      Welcome to SnoreLens! Please read these Terms of Service carefully before installing, accessing, or using the App.
+      By installing or using the App, you acknowledge that you have read, understood, and agreed to be bound by these Terms.
+      If you do not agree to any part of these Terms, you must uninstall the App and stop using it.
+    </p>
+
+    <h2>2. Service Description</h2>
+    <p class="section-label">2.1 Feature Overview</p>
+    <ul>
+      <li>The App provides snore monitoring and sleep analysis based on on-device AI.</li>
+      <li>With your permission, the App records environmental audio during sleep and analyzes it locally on your device.</li>
+      <li>The App generates sleep records, snoring event statistics, and simple trends for your personal reference.</li>
+    </ul>
+
+    <p class="section-label">2.2 Non-Medical Use</p>
+    <p>
+      The App is not a medical device and does not provide any diagnosis, treatment, or prevention of diseases.
+      All results are for lifestyle reference only and <strong>must not be used as a substitute for professional medical advice, diagnosis, or treatment</strong>.
+    </p>
+
+    <h2>3. Eligibility</h2>
+    <ul>
+      <li>You must have the legal capacity to enter into a binding agreement in your jurisdiction.</li>
+      <li>If you are a guardian of a minor user, you are responsible for ensuring that you have read and agreed to these Terms and that you supervise the minor’s use of the App.</li>
+    </ul>
+
+    <h2>4. Privacy and Data Summary</h2>
+    <p>
+      For detailed information on data collection, storage, and synchronization, please refer to our
+      <a href="https://feixiang001.github.io/snorelens/privacy-policy" target="_blank" rel="noopener noreferrer">
+        Privacy Policy
+      </a>.
+      The following is a brief summary directly related to these Terms:
+    </p>
+    <ul>
+      <li><strong>Audio recordings</strong>: Recording files are stored only on your local device and are not uploaded to any developer server.</li>
+      <li><strong>Sleep records and statistics</strong>: These may be synced across your devices via Apple iCloud / CloudKit and are stored in your personal iCloud account, encrypted and managed by Apple.</li>
+      <li><strong>Developer access</strong>: The developer cannot access your iCloud account or the personal sleep data stored in it.</li>
+    </ul>
+
+    <h2>5. User Conduct</h2>
+    <p>You agree not to engage in any of the following while using the App:</p>
+    <ul>
+      <li>Violating any applicable laws, regulations, or regulatory requirements;</li>
+      <li>Recording or analyzing others’ sleep sounds or personal information without their explicit informed consent;</li>
+      <li>Reverse engineering, decompiling, or attempting to obtain the source code or model details of the App;</li>
+      <li>Using the App for any abusive, harassing, privacy‑infringing, or illegal purposes;</li>
+      <li>Relying solely on the App’s output to make significant health or medical decisions.</li>
+    </ul>
+
+    <h2>6. Intellectual Property</h2>
+    <ul>
+      <li>All content in the App (including but not limited to the name, icon, UI design, text, code, models, and algorithms) is protected by copyright and other applicable laws.</li>
+      <li>You may not copy, modify, distribute, sell, or otherwise commercialize the App or any part of it without the prior written consent of the developer.</li>
+    </ul>
+
+    <h2>7. Changes and Termination</h2>
+    <ul>
+      <li>The developer reserves the right to update, modify, suspend, or terminate the App or any part of the service at any time.</li>
+      <li>In case of interruptions or changes due to maintenance, upgrades, or other reasons, the developer will use reasonable efforts to minimize any negative impact on you.</li>
+    </ul>
+
+    <h2>8. Disclaimer and Limitation of Liability</h2>
+    <p>
+      To the maximum extent permitted by applicable law, the App is provided on an “<strong>as is</strong>” and “<strong>as available</strong>” basis,
+      without any warranties of any kind, express or implied, including but not limited to:
+    </p>
+    <ul>
+      <li>Accuracy, completeness, reliability, or fitness of any results or analysis for a particular purpose;</li>
+      <li>Uninterrupted, error‑free, or completely secure operation of the App;</li>
+      <li>Suitability of the App for any medical, diagnostic, or clinical use.</li>
+    </ul>
+    <p>
+      To the extent permitted by law, the developer shall not be liable for any direct, indirect, incidental, special, or consequential damages
+      arising from or in connection with your use or inability to use the App. If liability cannot be fully excluded, the total liability
+      of the developer shall in no event exceed the amount you actually paid for using the App (which is typically 0).
+    </p>
+
+    <h2>9. Third‑Party Services</h2>
+    <ul>
+      <li>The App relies on system‑level services provided by Apple, such as iCloud / CloudKit, AVFoundation, and StoreKit (if subscriptions are used).</li>
+      <li>Your use of these third‑party services is also governed by their respective terms and privacy policies (e.g., Apple’s terms).</li>
+    </ul>
+
+    <h2>10. Changes to These Terms</h2>
+    <p>
+      We may update these Terms from time to time to reflect changes in features, legal requirements, or privacy practices.
+      Updated Terms will be posted on this page with an updated effective date.
+      By continuing to use the App after such changes, you agree to be bound by the updated Terms.
+    </p>
+
+    <h2>11. Contact Us</h2>
+    <p>If you have any questions, comments, or suggestions about these Terms or the App, please contact us:</p>
+    <ul>
+      <li>📧 Email: <a href="mailto:shaozhen008@gmail.com">shaozhen008@gmail.com</a></li>
+      <li>🌐 GitHub: <a href="https://feixiang001.github.io/snorelens" target="_blank" rel="noopener noreferrer">https://feixiang001.github.io/snorelens</a></li>
+    </ul>
+    <p>© 2026 SnoreLens. All rights reserved.</p>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      const zh = document.getElementById('content-zh');
+      const en = document.getElementById('content-en');
+      const btnZh = document.getElementById('btn-zh');
+      const btnEn = document.getElementById('btn-en');
+
+      if (lang === 'zh') {
+        zh.style.display = 'block';
+        en.style.display = 'none';
+        btnZh.classList.add('active');
+        btnEn.classList.remove('active');
+      } else {
+        zh.style.display = 'none';
+        en.style.display = 'block';
+        btnZh.classList.remove('active');
+        btnEn.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
