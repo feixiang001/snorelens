@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Chinese Homepage -->
+  <url>
+    <loc>https://feixiang001.github.io/snorelens/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://feixiang001.github.io/snorelens/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://feixiang001.github.io/snorelens/"/>
+  </url>
+  
+  <!-- English Homepage -->
+  <url>
+    <loc>https://feixiang001.github.io/snorelens/index-en.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://feixiang001.github.io/snorelens/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://feixiang001.github.io/snorelens/"/>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://feixiang001.github.io/snorelens/privacy-policy.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Support -->
+  <url>
+    <loc>https://feixiang001.github.io/snorelens/support.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- terms-of-service -->
+  <url>
+    <loc>https://feixiang001.github.io/snorelens/terms-of-service.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+</urlset>
